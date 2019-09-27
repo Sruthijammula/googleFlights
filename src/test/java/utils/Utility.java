@@ -32,7 +32,7 @@ public class Utility {
         String sBrowserName;
         try{
             //System.setProperty("webdriver.chrome.driver","chromedriver");
-            System.setProperty("webdriver.chrome.driver","chromedriver");
+            System.setProperty("webdriver.chrome.driver","chromedriver.exe");
             driver = new ChromeDriver();
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             driver.get(Constants.URL);

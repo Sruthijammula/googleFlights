@@ -65,6 +65,8 @@ public class FlightTests {
             Assert.assertTrue("YYC".equalsIgnoreCase(destinationInResult),"Origin is not YYC");
             Assert.assertTrue(expectedDate.equalsIgnoreCase(actualDate), "Date did not match");
 
+            PlanTripsActions.expandResult();
+
             Assert.assertTrue(driver.findElement(By.xpath("(//hairline-button[text()='Select flight'])[1]")).isDisplayed());
             Assert.assertTrue(driver.findElement(By.xpath("(//*[@class='gws-flights-results__expanded-itinerary gws-flights-results__itinerary']/*[@class='gws-flights-results__itinerary-price'])[1]")).isDisplayed());
 

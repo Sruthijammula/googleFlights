@@ -44,7 +44,7 @@ public class PlanTripObjects extends BaseClass{
     public static String NONSTOP_ELEMENT = "//*[@role='radio'][@data-flt-ve='stops_option']/*[text()='Non-stop only']/..";
     public static String NONSTOP_CLOSE = "//*[@class='gws-flights-filter__filter-dialog-close']/span";
     
-    public static String EXPAND_ELEMENT = "//*[@class='gws-flights-results__expand'])[1]";
+    public static String EXPAND_ELEMENT = "(//*[@class='gws-flights-results__expand'])[1]";
 
     public static String ORIGIN_IN_RESULT = "(//*[@class='gws-flights-results__result-list']/li)[1]//*[@class='gws-flights-results__leg-departure gws-flights__flex-box flt-subhead1Normal']//span[@class='gws-flights-results__iata-code']";
     public static String DESTINATION_IN_RESULT = "(//*[@class='gws-flights-results__result-list']/li)[1]//*[@class='gws-flights-results__leg-arrival gws-flights__flex-box flt-subhead1Normal']//*[@class='gws-flights-results__iata-code']";
