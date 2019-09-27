@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
+import utils.Constants;
+import utils.Utility;
 
 import java.time.Duration;
 import java.util.function.Function;
@@ -35,7 +37,7 @@ public class PlanTripObjects extends BaseClass{
     public static String SELECT_DESTINATION = "//*[@class='fsapp-option-city-name'][text()='Calgary, Alberta']";
 
     public static String DATE_ELEMENT = "(//*[@class='gws-flights__flex-filler gws-flights__ellipsize gws-flights-form__input-target'])[1]";
-    public static String SELECT_DATE = "//calendar-day[@data-day='2019-09-26']";
+    public static String SELECT_DATE = "//calendar-day[@data-day='"+ Utility.formattedDate_Nu() +"']";
     public static String DONE_ELEMENT = "//g-raised-button[@data-flt-ve='done']/div[text()='Done']";
 
     public static String STOPS_ELEMENT = "//*[@role='button'][@data-flt-ve='stops']";

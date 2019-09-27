@@ -57,18 +57,16 @@ public class FlightTests {
             String originInResult = PlanTripsActions.getOriginInResult();//get IATA code for origin from result
             System.out.println("--originInResult--"+originInResult+"--");
             String destinationInResult = PlanTripsActions.getDestinationInResult();//get IATA code for destination from result
-            String dateInResult = PlanTripsActions.getDateInResult();//get date  from result
-            System.out.println("--dateInResult"+dateInResult+"--");
-            String expectedDate = Utility.formattedDate();
+            String actualDate = PlanTripsActions.getDateInResult();//get date  from result
+            System.out.println("--dateInResult "+actualDate+"--");
+            String expectedDate = Utility.formattedDate(Utility.formattedDate_Nu());
 
             Assert.assertTrue("YYZ".equalsIgnoreCase(originInResult),"Origin is not YYZ");
             Assert.assertTrue("YYC".equalsIgnoreCase(destinationInResult),"Origin is not YYC");
-            Assert.assertTrue(expectedDate.equalsIgnoreCase(dateInResult), "Date did not match");
+            Assert.assertTrue(expectedDate.equalsIgnoreCase(actualDate), "Date did not match");
 
             Assert.assertTrue(driver.findElement(By.xpath("(//hairline-button[text()='Select flight'])[1]")).isDisplayed());
             Assert.assertTrue(driver.findElement(By.xpath("(//*[@class='gws-flights-results__expanded-itinerary gws-flights-results__itinerary']/*[@class='gws-flights-results__itinerary-price'])[1]")).isDisplayed());
-
-
 
         }catch(ParseException ex) {
             System.out.println("---ParseException from Utility Class--"+ex.getMessage());
@@ -80,6 +78,6 @@ public class FlightTests {
     @AfterTest
     public void tearDown(){
         //driver.close();
-        //driver.quit();
+        driver.quit();
     }
 }
